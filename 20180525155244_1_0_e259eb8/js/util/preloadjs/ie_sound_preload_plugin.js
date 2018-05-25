@@ -1,1 +1,0 @@
-define(["underscore","config"],function(n,e){"use strict";var r=function(){},i=r;return i.getPreloadHandlers=function(){return{callback:i.preloadHandler,types:["sound"],extensions:["mp3","wav","ogg"]}},i.preloadHandler=function(r,i){return 0!==e.SOUND_PRIORTY_RANGE&&(n.isUndefined(r.priority)||r.priority>e.SOUND_PRIORTY_RANGE)?!1:!0},r});
