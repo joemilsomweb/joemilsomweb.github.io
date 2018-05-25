@@ -1,0 +1,1 @@
+define(["underscore","createjs"],function(e,i){"use strict";var n=window.lib={},r=window.images={};return e.extend(i,{lib:n,images:r}),i});

@@ -1,0 +1,1 @@
+define([],function(){"use strict";function n(){this.deepClone=function(n){return JSON.parse(JSON.stringify(n))}}return new n});
