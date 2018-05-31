@@ -149,7 +149,7 @@ vec2 distortSlow(vec2 v){
     // return texture2D(tex,
     // vec2(vUv.x + sin(gl_FragCoord.x/15. + noiseMultiplier) / 85.,
     // vUv.y + sin(sin(gl_FragCoord.x/15. + noiseMultiplier) / 10. + sin(noiseMultiplier /10.)) / 40.));
-  v.x = v.x + sin(gl_FragCoord.x/15. + noiseMultiplier) / 85.;  
+  v.x = v.x + sin(gl_FragCoord.x/40. + noiseMultiplier) / 85.;  
   v.y = v.y + (sin(gl_FragCoord.x/15. + noiseMultiplier) / 10. + sin(noiseMultiplier /10.)) / 40.;
 
   return vec2(v.x, v.y);

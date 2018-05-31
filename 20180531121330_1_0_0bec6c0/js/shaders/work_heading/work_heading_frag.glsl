@@ -70,22 +70,19 @@ void main()
 {
 	float n = snoise((gl_FragCoord.xy) / 30. + snoise(vUv.xy * 5.));
 
-  float s = 0.1;
+  vec2 v = vUv;
 
-	// vec4 texR = texture2D(tex_2, vec2(vUv.x  * s + n * 0.05, vUv.y * s  + noiseMultiplier*0.1));
-	// vec4 texG = texture2D(tex_2, vec2(vUv.x  * s + n * 0.02, vUv.y * s  + noiseMultiplier*0.2));
-	// vec4 texB = texture2D(tex_2, vec2(vUv.x  * s + n * 0.05, vUv.y * s  + noiseMultiplier*0.06));
+  v.x = v.x + sin(gl_FragCoord.x/80. + noiseMultiplier) / 120.;  
+  v.y = v.y + (sin(gl_FragCoord.x/15. + noiseMultiplier) / 10. + sin(noiseMultiplier /10.)) / 20.;
 
-	// vec4 col = vec4(texR.r, texG.g, texB.b, texR.a);
+  vec4 tex = texture2D(tex, v);
 
-	// col.r *= redMultiplier;
-	// col.g *= greenMultiplier;
-	// col.b *= blueMultiplier;
-  vec4 mask = texture2D(tex, vUv);
+  // vec4 mask = texture2D(tex, vUv + n * 0.005);
   // vec4 col = texture2D(bg_tex, vUv);
 
   // col.a = col.a * mask.a;  
   // col = mask;  
-	gl_FragColor = mask;
+  // gl_FragColor = mask;
+	gl_FragColor = tex;
 }
 
