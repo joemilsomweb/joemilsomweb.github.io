@@ -176,16 +176,18 @@ vec2 distortMouse(vec2 v){
   // if(distance(gl_FragCoord.xy, vec2(mousePos.x, resolution.y - mousePos.y)) < 30.){
     // col.rgba = vec4(0., 0., 0., 1.);
   // }
-  vec2 tNorm = vec2(gl_FragCoord.x, gl_FragCoord.y);
-  vec2 mNorm = vec2(mousePos.x, (resolution.y - mousePos.y));
 
-  float scale = resolution.x / resolution.y;
+  float scale = 512. / resolution.x;
 
-  float d = distance(tNorm, mNorm);
-  float dX = distance(tNorm.x, mNorm.x);
-  float dY = distance(tNorm.y, mNorm.y);
+  vec2 tNorm = vec2(gl_FragCoord.x, gl_FragCoord.y) * scale;
+  vec2 mNorm = vec2(mousePos.x, (resolution.y - mousePos.y)) * scale;
+
+
+  float d = distance(tNorm, mNorm) * scale;
+  float dX = distance(tNorm.x, mNorm.x) * scale;
+  float dY = distance(tNorm.y, mNorm.y) * scale;
   
-  float dist = 700.;
+  float dist = 700. * scale;
 
   if(d < dist){
     // float p = sin((1. - (d / 0.3))) * 4.;
