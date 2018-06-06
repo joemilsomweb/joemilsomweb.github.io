@@ -1,1 +1,0 @@
-define(["jquery","config","libs/mocha","libs/expect"],function(e,i,t,n){return function(){t.ui("bdd"),describe("Project",function(){it("Should implement user story based tests")})}});
